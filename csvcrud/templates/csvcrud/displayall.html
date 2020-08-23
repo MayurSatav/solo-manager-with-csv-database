@@ -1,0 +1,43 @@
+{% extends "csvcrud/base.html" %}
+{% block content %}
+<h2>Display Students</h2>
+<hr>
+
+
+<table class="table overflow-auto">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">StudentId</th>
+        <th scope="col">Name</th>
+        <th scope="col">Gender</th>
+        <th scope="col">DOB</th>
+        <th scope="col">City</th>
+        <th scope="col">State</th>
+        <th scope="col">Email</th>
+        <th scope="col">Qualification</th>
+        <th scope="col">Stream</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        {% for file in stuinfo %}
+      <tr>
+       
+        <td>{{ file.sid }}</td>
+        <td>{{ file.name }}</td>
+        <td>{{ file.gender }}</td>
+        <td>{{ file.dob }}</td>
+        <td>{{ file.city }}</td>
+        <td>{{ file.state }}</td>
+        <td>{{ file.email }}</td>
+        <td>{{ file.quali }}</td>
+        <td>{{ file.stream }}</td>
+        
+      </tr>
+      {% endfor %}
+    </tbody>
+</table>
+
+
+    
+{% endblock content %}

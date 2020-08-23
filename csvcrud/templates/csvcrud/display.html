@@ -1,0 +1,15 @@
+{% extends "csvcrud/base.html" %}
+{% block content %}
+    <h2>Display Student</h2>
+    <hr>
+    <form action="/display" method="get" name="myForm" enctype="multipart/form-data">
+
+        <div class="form-group">
+            <label for="sid">Student ID</label>
+            <input type="text" class="form-control" id="sid" placeholder="Enter Student ID" name="sid">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <br><br>
+    </form>
+{% endblock content %}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Students Management</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+</head>
+<style>
+  .card {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+}
+</style>
+<body>
+
+
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="{% url 'csvcrud-home' %}">SOLO MANAGER</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Contact us</a>
+        </li>
+    </ul>
+</div>
+  
+</nav>
+
+<div class="container" style="margin-top:30px">
+
+  <div class="row">
+
+    <div class="col-sm-3">
+      <h2>Options</h2>
+      <hr>
+      
+       <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <div class="d-flex justify-content-center"><i class="fa fa-user-plus " style="font-size:60px; text-align: center;" aria-hidden="true"></i>
+            </div>
+            <h2 class="text-center">Add Student</h2>
+            <a href="{% url 'csvcrud-addpg' %}" class="stretched-link"></a>
+          </div>
+        </div>
+
+        <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <div class="d-flex justify-content-center"><i class="fa fa-user" style="font-size:60px; text-align: center;" aria-hidden="true"></i>
+            </div>
+            <h2 class="text-center">Display</h2>
+          	<a href="{% url 'csvcrud-displaypg' %}" class="stretched-link"></a>
+          </div>
+        </div>
+
+        <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <div class="d-flex justify-content-center"><i class="fa fa-users" style="font-size:60px; text-align: center;" aria-hidden="true"></i>
+            </div>
+            <h2 class="text-center">Display All</h2>
+            <a href="{% url 'csvcrud-displayallpg' %}" class="stretched-link"></a>
+          </div>
+        </div>
+
+        <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+
+          <div class="card-body">
+            <div class="d-flex justify-content-center"><i class="fa fa-download" style="font-size:60px; text-align: center;" aria-hidden="true"></i>
+            </div>
+            <h2 class="text-center">Export CSV</h2>
+            <a href="{% url 'csvcrud-download_file' %}" class="stretched-link" download></a>
+          </div>
+        </div>
+
+    </div>
+
+    <div class="col-sm-9">
+        {% block content %}{% endblock %}
+    </div>
+
+  </div>
+  
+</div>
+<br>
+<footer class="footer">
+  <div class="container text-center">
+    <span class="text-muted"><p class="card-text"><small class="text-muted">© <a href="https://www.mayursatav.com/">www.mayursatav.com</a>, Inc. All rights reserved.</small></p></span>
+  </div>
+</footer>
+<br>
+</body>
+</html>

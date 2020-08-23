@@ -1,0 +1,23 @@
+{% extends "csvcrud/base.html" %}
+{% block content %}
+<h2>Display Student</h2>
+<hr>
+    {% for file in stuinfo %}
+    <div class="card">
+        <div class="card-header">
+        <h2>{{ file.sid }}</h2>
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>Name     : {{ file.name }}</p>
+            <p>Gender         : {{ file.gender }}</p>
+            <p>Date of Birth  : {{ file.dob }}</p>
+            <p>Qualifications : {{ file.quali }}</p>
+            <p>Stream         : {{ file.stream }}</p>
+            <footer class="blockquote-footer">{{ file.email }}, {{ file.city }}, {{ file.state }}<cite title="Source Title"></cite></footer>
+          </blockquote>
+        </div>
+    </div>
+    {% endfor %}
+    
+{% endblock content %}
