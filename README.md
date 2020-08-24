@@ -13,7 +13,7 @@ A student administration system is a information management system for education
 **Database**
 - CSV (Comma Separated Values
 
-## Installations Commands
+## Installation Commands
 - Django
 
 `pip3 install Django`
